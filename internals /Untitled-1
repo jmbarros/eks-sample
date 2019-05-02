@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: eks-sample
+spec:
+  containers:
+    - name: eks-sample
+      image: index.docker.io/jmbarros/eks-sample:latest
+      imagePullPolicy: Always
+      command: [ "echo", "SUCCESS" ]
+  imagePullSecrets:
+    - name: myregistrykey
